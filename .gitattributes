@@ -1,22 +1,49 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include<iostream>
+using namespace std;
 
-# Custom for Visual Studio
-*.cs     diff=csharp
-*.sln    merge=union
-*.csproj merge=union
-*.vbproj merge=union
-*.fsproj merge=union
-*.dbproj merge=union
+class Dolar{
+public:
+double lira;
+Dolar(double my_lira){lira=my_lira;}
+double  GetDolar(){ return lira/2.13854797;}
+};
+class Euro{
+public: double lira;
+Euro(double my_lira){lira=my_lira;}
+double GetEuro(){return lira/2.90915234;}
+};
+class Sterlin{
+    public: double lira;
+    Sterlin(double my_lira){lira=my_lira;}
+    double GetSterlin(){return lira/3.63112;}};
 
-# Standard to msysgit
-*.doc	 diff=astextplain
-*.DOC	 diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.dot  diff=astextplain
-*.DOT  diff=astextplain
-*.pdf  diff=astextplain
-*.PDF	 diff=astextplain
-*.rtf	 diff=astextplain
-*.RTF	 diff=astextplain
+class Yen{
+public: double lira;
+Yen(double my_lira){lira=my_lira;}
+double GetYen(){return lira/0.0209859;}};
+
+int main(){
+
+double a;
+cout<<"Lutfen cevirmek istediginiz birimi secin : "<<"\n 1-)DOLAR \n 2-)EURO \n 3-)STERLIN \n 4) YEN\n "<<endl ;
+cin>>a;
+double b;
+cout<<"Lutfen cevirmek istediginiz miktari  TL cinsinden giriniz : "<<endl;
+cin>>b;
+if(a==1){
+       Dolar lira(b);
+cout<<"Dolar  : " <<lira.GetDolar()<<endl;}
+if(a==2){
+    Euro para(b);
+
+cout<<"Euro : "<<para.GetEuro()<<endl;}
+if(a==3)
+{
+    Sterlin lira(b);
+    cout<<"Sterlin : "<<lira.GetSterlin()<<endl;
+}
+if(a==4){
+Yen lira(b);
+cout<<"Yen : "<<lira.GetYen()<<endl;
+}
+return 0;}
